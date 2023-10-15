@@ -4,6 +4,10 @@ JP-PHDG: (ja-JP) Playground for Handwriting Data Generation
 
 This Flask-based web application aims to facilitate the generation of handwriting data by providing a frontend that allows users to draw characters. The application serves different characters that the user needs to draw, and the drawn images are then saved as PNG files in a designated folder. The characters can be served randomly or in a sequential manner, depending on the settings.
 
+## Screenshots
+<img width="1080" alt="PNGイメージ" src="https://github.com/Manato1fg/JP-PHDG/assets/21980635/1402890a-1f15-4d8d-8ca1-51a40ec20ccd">
+
+
 ## Prerequisites
 
 - Python 3.x
