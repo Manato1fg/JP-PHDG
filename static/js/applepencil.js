@@ -37,19 +37,18 @@ export function initApplePencil(width, height) {
             y = e.clientY - rect.top;
             if (e.touches && e.touches[0] && typeof e.touches[0]["force"] !== "undefined") {
                 if (e.touches[0]["force"] > 0) {
-                pressure = e.touches[0]["force"]
+                    pressure = e.touches[0]["force"]
                 }
-                x = e.touches[0].pageX
-                y = e.touches[0].pageY
+                x = e.touches[0].clientX - rect.left
+                y = e.touches[0].clientY - rect.top
             } else {
-                pressure = 1.0
+                pressure = 0.5
             }
         
             isMousedown = true
         
-            lineWidth = Math.log(pressure + 1) * 20 // Weber–Fechner law ?
+            lineWidth = Math.log(pressure + 1) * 40 // Weber–Fechner law ?
             context.lineWidth = lineWidth// pressure * 50;
-        
             points.push({ x, y, lineWidth })
             drawOnCanvas(points)
         })
@@ -73,14 +72,14 @@ export function initApplePencil(width, height) {
                 if (e.touches[0]["force"] > 0) {
                 pressure = e.touches[0]["force"]
                 }
-                x = e.touches[0].pageX 
-                y = e.touches[0].pageY
+                x = e.touches[0].clientX - rect.left
+                y = e.touches[0].clientY - rect.top
             } else {
-                pressure = 1.0
+                pressure = 0.5
             }
         
             // smoothen line width
-            lineWidth = (Math.log(pressure + 1) * 20 * 0.2 + lineWidth * 0.8) // Weber–Fechner law ?
+            lineWidth = (Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.8) // Weber–Fechner law ?
             points.push({ x, y, lineWidth })
         
             drawOnCanvas(points);
@@ -102,8 +101,8 @@ export function initApplePencil(width, height) {
                 if (e.touches[0]["force"] > 0) {
                 pressure = e.touches[0]["force"]
                 }
-                x = e.touches[0].pageX
-                y = e.touches[0].pageY
+                x = e.touches[0].clientX - rect.left
+                y = e.touches[0].clientY - rect.top
             } else {
                 pressure = 1.0
             }

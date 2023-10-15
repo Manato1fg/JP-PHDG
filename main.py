@@ -35,7 +35,7 @@ def save_image():
     if not base64_data or not character:
         return jsonify({'status': 'error', 'message': 'No data provided'})
 
-    os.makedirs(f'{output_folder}{character}', exist_ok=True)
+    os.makedirs(f'{output_folder}/{character}', exist_ok=True)
     counts = len(os.listdir(f'{output_folder}/{character}/'))
 
     with open(f'{output_folder}/{character}/{counts + 1}.png', "wb") as fh:
