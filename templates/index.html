@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Playground</title>
+    <!-- Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+<body>
+    <div id="app">
+        <div id="app-header">
+            <h1>Playground for Handwriting Data Generation</h1>
+            <span>Created By Manato1fg</span>
+        </div>
+        <div id="app-body">
+            <div id="body-left">
+                <!-- display what character the user asked to write -->
+                <h2>Write the character below</h2>
+                <div id="write">
+                    <span id="character" class="character"></span>
+                </div>
+                <div class="vertical-spacer-48"></div>
+                <button id="control-next" class="button is-yellow">Next</button>
+            </div>
+            <div id="body-right">
+                <div id="canvas-control">
+                    <button id="canvas-control-undo" class="is-only-icon">
+                        <span class="material-symbols-outlined">
+                            undo
+                        </span>
+                    </button>
+                    <div class="horizontal-spacer-24"></div>
+                    <button id="canvas-control-clear" class="is-only-icon">
+                        <span class="material-symbols-outlined">
+                            ink_eraser
+                        </span>
+                    </button>
+                </div>
+                <div class="vertical-spacer-48"></div>
+                <div id="canvas">
+                    <canvas id="canvas-main"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/index.js" type="module"></script>
+</body>
+</html>
