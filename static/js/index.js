@@ -14,13 +14,14 @@ document.addEventListener("DOMContentLoaded", async function() {
     clearButton.addEventListener("click", () => clearDraw())
 
     let index_count = 0
+
     async function getNextCharacter() {
         const response = await fetch(`/get-character?index_count=${index_count}`)
-        index_count += 1
         const data = await response.json()
         const character = data["character"]
         const c = document.querySelector("#character")
         c.textContent = character
+        index_count++
     }
 
     const nextButton = document.querySelector("#control-next")
